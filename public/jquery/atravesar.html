@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            //$("p").css('background-color', 'green');
+
+            //children
+            //siblings
+            //parent
+
+
+            //Children = HIJOS
+            // seleccionamos todas las clases titulo de tipo DIV
+            // y a sus HIJOS buscamos etiqueta
+            // p y le damos un fondo VERDE. 
+            $("div.titulo").children("p").css('background-color', 'green');
+
+            // siblings  =  HERMANOS
+
+            // busca los elementos que tengan clase contenido y al hacer clic en algun H3 se 
+            // ejecute el callback function.
+            $(".contenido").on("click", "h3", function () {
+
+                //selecciona el elemento que hizo el CLIC. y busca sus HERMANOS que sean P
+                // y añade la regla css de color de fondo AZUL. 
+                $(this).siblings("p").css('background-color', 'blue');
+            });
+
+            // A los elementos H3.  A sus padres que tengan la clase titulo
+            //  agregar un elemento al final de tipo h2 que diga DINAMICO. 
+            $("h3").parent(".titulo").append("<h2>DINAMICO</h2>");
+
+
+
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="titulo">
+
+        <h1>Titulo</h1>
+        <p>Parrafo de Titulo</p>
+        <h3>SubTitulo</h3>
+        <p>Otro Parrafo</p>
+
+    </div>
+
+    <div class="contenido">
+
+        <h1>Contenido</h1>
+        <p>Parrafo de Contenido</p>
+        <h3>Sección 2</h3>
+        <p>Otro Parrafo 2</p>
+
+    </div>
+
+    <div class="contenido2">
+
+        <h1>Contenido</h1>
+        <p>Parrafo de Contenido</p>
+        <h3>Sección 2</h3>
+        <p>Otro Parrafo 2</p>
+
+    </div>
+
+</body>
+
+</html>
