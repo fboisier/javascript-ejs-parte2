@@ -11,6 +11,18 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
+let gatos = [
+    { nombre: "cutddles", comida_favorita: "Spagetti", edad: 3, lugares_dormir: ["lugar 1", "lugar 2"]},
+    { nombre: "tom", comida_favorita: "leche", edad: 2, lugares_dormir: ["colcha", "ventanal"]},
+    { nombre: "don", comida_favorita: "lazaña", edad: 5, lugares_dormir: ["garage", "bajo la cama"]}
+];
+
+app.get("/gatos", (req,res) =>{
+
+    res.json(gatos);
+
+});
+
 app.get("/cars", (req,res) =>{
 
     res.render("autos");
